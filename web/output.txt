@@ -1,3 +1,0 @@
-14,514,471|right now
-15,196,605|24 hour peak
-18,537,490|all-time peak
