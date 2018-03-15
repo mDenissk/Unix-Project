@@ -2,13 +2,25 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-	<meta charset="UTF-8"> 
+	<meta charset='UTF-8'> 
     <title>Steam stats</title>
+    <link rel='stylesheet' type='text/css' href='styles.css'>
 </head>
     <body>
         <h1>Steam stats</h1>
-        <p>Stats updates every hour</p>
-        <p>There is amount of steam users online:</p>
-        <script src="scripts.js"></script>
+        <p class='text'>Stats updates every hour</p>
+        <p class='text'>There is amount of steam users online:</p>
+        <div id='forTable'></div>
+        <div>
+        	<div class='column left'>
+        		<canvas id='graphCanvas' width='400' height='200'></canvas>
+        		<p id='timeValue' class='timeValue'>time</p>
+        	</div>
+        	<div class='column right'>
+        		<p id='maxValue' class='maxValue'>max</p>
+        		<p id='minValue'>min</p>
+        	</div>
+        </div>
+        <script src='scripts.js'></script>
     </body>
 </html>
