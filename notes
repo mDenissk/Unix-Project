@@ -1,0 +1,44 @@
+
+Task: From file index.html get stats (number and text).
+
+We have temporary file out.txt
+
+=======================================================================================================
+Command task: Find text between <ul class="steamspy-stats"> and </ul>
+
+Command: grep -o '<li><strong>.*</li>' index.html
+
+Problem: last line has unnecessary text
+--------------------------------------------------------------------------------------------------------
+Command: cat index.html | grep -o '<li><strong>.*</em></li>' | sed 's/ <em.*em>//'
+
+
+Problem: show only last line.
+--------------------------------------------------------------------------------------------------------
+Command: cat index.html | tr '\n' '|' | grep -o '<ul class="steamspy-stats">.*</ul>' | sed 's/\(<ul class="steamspy-stats">\|<\/ul>\)//g' | sed 's/|/\n/g' > out.txt 
+
+Problem: This command finds last </ul> from index.html, but i need the first one.
+--------------------------------------------------------------------------------------------------------
+Command: cat index.html | tr '\n' '|' | grep -o '<li><strong>.*</em></li>' | sed 's/|/\n/g' > out.txt 
+
+Problem: there are unnecessary text
+--------------------------------------------------------------------------------------------------------
+Command: cat index.html | tr '\n' '|' | grep -o '<li><strong>.*</em></li>' | sed 's/|/\n/g' | sed 's/ <em.*em>//' > out.txt 
+
+Problem: show tags
+--------------------------------------------------------------------------------------------------------
+Command: cat index.html | grep -o '<li><strong>.*</li>' | sed 's/ <em.*em>//'> out.txt 
+
+Problem: show tags
+--------------------------------------------------------------------------------------------------------
+Perfect Command: cat index.html | grep -o '<li><strong>.*</li>' | sed 's/ <em.*em>\|<li><strong>\|<\/li>\|<\/strong>//g'
+
+========================================================================================================
+
+Command task: Save only number and explanation of this numbers
+
+Command: 
+
+
+
+

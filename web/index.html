@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Steam stats</title>
+</head>
+    <body>
+        <h1>Steam stats</h1>
+        <p>Refresh page to update stats</p>
+        <p id="contents"></p>
+        <p id="test"></p>
+
+        <script>
+
+            function createLine(text)
+            {
+                let line = '';
+                let element;
+                text = text.split('\n');
+                text.pop(); // remove empty ellement
+                for (let i = 0 ; i < text.length ; i++)
+                {
+                    element = text[i].split('|')
+                    line = line + element[1].charAt(0).toUpperCase() 
+                                + element[1].slice(1)
+                                + ' - ' + element[0] + '\n';
+                }
+                return line;
+            }
+
+            function populatePre(url) {
+                var xhr = new XMLHttpRequest();
+                xhr.onload = function () {
+                    document.getElementById('contents').innerText = createLine(this.responseText);
+                };
+                xhr.open('GET', url);
+                xhr.send();
+            }
+            populatePre('output.txt');
+
+        </script>
+
+    </body>
+</html>
