@@ -47,4 +47,3 @@ fi
 rm $sourceFile
 
 exec ./linuxScripts/checkData.sh
-exec ./linuxScripts/moveStats.sh

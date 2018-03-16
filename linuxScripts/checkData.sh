@@ -17,3 +17,5 @@ then
 	num=$(awk '{ print $1-1 }' $statsCounter)
 	echo -n $num > $statsCounter
 fi
+
+exec ./linuxScripts/moveStats.sh
