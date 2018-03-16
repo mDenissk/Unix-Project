@@ -82,13 +82,8 @@ function createGraph(text)
     line.stroke();
 
     //we know that every first line is always "right now" field
-    for (let i = 0 ; i < data.length ; i += 4)
-    {
-        a = data[i].replace('<Hour>','');
-        str = str + a + ' ';
-    }
-    console.log(str);
-    document.getElementById('timeValue').innerText = str;
+    document.getElementById('timeValueMin').innerText = data[0].replace('<Hour>','');
+    document.getElementById('timeValueMax').innerText = data[data.length-4].replace('<Hour>','');
 }
 
 function loadUsersOnline(url) {
