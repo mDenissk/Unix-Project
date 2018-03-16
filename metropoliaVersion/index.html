@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='UTF-8'> 
+    <title>Steam stats</title>
+    <link rel='stylesheet' type='text/css' href='styles.css'>
+</head>
+    <body>
+        <h1>Steam stats</h1>
+        <p class='text'>Stats updates every hour</p>
+        <p class='text'>There is amount of steam users online:</p>
+        <div id='forTable'></div>
+        <p class='text'>Next graph shows users online for last 10 hours:</p>
+        <div>
+        	<div class='column left'>
+        		<canvas id='graphCanvas' width='400' height='200'></canvas>
+        		<div class='column smaller left'>
+	        		<p id='timeValueMin' class='timeValueMin'>time</p>
+	        	</div>
+	        	<div class='column smaller right'>
+	        		<p id='timeValueMax' class='timeValueMax'>time</p>
+	        	</div>
+	        	<p class='time'>Hours</p>
+        	</div>
+        	<div class='column right'>
+        		<p id='maxValue' class='maxValue'>max</p>
+        		<p id='minValue'>min</p>
+        	</div>
+        </div>
+        <script src='scripts.js'></script>
+    </body>
+</html>
