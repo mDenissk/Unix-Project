@@ -31,14 +31,7 @@ Command: cat index.html | grep -o '<li><strong>.*</li>' | sed 's/ <em.*em>//'> o
 
 Problem: show tags
 --------------------------------------------------------------------------------------------------------
+
 Perfect Command: cat index.html | grep -o '<li><strong>.*</li>' | sed 's/ <em.*em>\|<li><strong>\|<\/li>\|<\/strong>//g'
 
 ========================================================================================================
-
-Command task: Save only number and explanation of this numbers
-
-Command: 
-
-
-
-
