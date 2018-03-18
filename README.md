@@ -22,5 +22,5 @@ For the project I decide to gather number of users online in Steam service. I de
 * All-time peak
 
 “Right now” field shows how much users were at current hour at 00 minutes (**:00).
-I have data history which saves last 10 records. And using in this data history field “Right now” I create graph.
+I have data history which saves last 10 records. Using in this data history field “Right now” I create graph.
 
